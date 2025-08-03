@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: finance-tracker-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_HOST
+        value: your-mysql-host
+      - key: DB_USER
+        value: your-mysql-user
+      - key: DB_PASSWORD
+        value: your-mysql-password
+      - key: DB_NAME
+        value: your-mysql-database
+      - key: DB_PORT
+        value: 3306
+      - key: REDIS_URL
+        value: your-redis-url
+      - key: CORS_ORIGIN
+        value: https:https://personal-finance-tracker-sand-tau.vercel.app
